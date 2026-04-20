@@ -1,0 +1,106 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 10%;
+  min-height: 100vh;
+
+
+}
+
+/* LEFT */
+.home-left {
+  max-width: 50%;
+}
+
+.home-left h4 {
+  font-size: 52px;
+}
+
+.home-left h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.home-left h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.home-left span {
+  color: #7c3aed;
+}
+
+.home-left p {
+  font-size: 18px;
+  max-width: 840px;
+  color: rgb(176, 178, 167);
+
+}
+
+/* RIGHT IMAGE */
+.home-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ROTATING RING */
+.image-box::before {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+
+  background: conic-gradient(#e497c6,
+      #de5e5e,
+      #89e3e3);
+
+  animation: spin 3s linear infinite;
+  /* FAST + CONTINUOUS */
+  z-index: 0;
+}
+
+/* IMAGE */
+.image-box img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid #0b0f19;
+  z-index: 2;
+}
+
+.image-box::before {
+  box-shadow: 0 0 40px #ada2b7;
+}
+
+/* CUT CENTER (IMPORTANT FIX) */
+.image-box::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  background: #0b0f19;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+
+/* ANIMATION */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

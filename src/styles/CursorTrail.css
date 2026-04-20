@@ -1,0 +1,32 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    /* smooth soft glow */
+    background: rgba(34, 211, 238, 0.15);
+    border: 2px solid rgba(34, 211, 238, 0.6);
+
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.08s ease-out;
+}
+
+/* inner dot */
+.cursor::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #22d3ee;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
